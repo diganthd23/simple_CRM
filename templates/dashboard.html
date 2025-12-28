@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Croma CRM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+<!-- ================= DASHBOARD ACTIONS ================= -->
+<h2>CRM Dashboard</h2>
+
+<div class="dashboard-grid reveal-up">
+    <a href="/leads" class="dash-card blue">
+        <h3>Leads</h3>
+        <p>{{ total_leads }} Total</p>
+    </a>
+    <a href="/products" class="dash-card purple">
+        <h3>Products</h3>
+        <p>{{ total_products }}</p>
+    </a>
+    <a href="/deals" class="dash-card green">
+        <h3>Deals</h3>
+        <p>{{ closed_leads }}</p>
+    </a>
+    <a href="/reminders" class="dash-card red">
+        <h3>Reminders</h3>
+        <p>{{ total_reminders }}</p>
+    </a>
+</div>
+
+<!-- ================= SCROLL 1 ================= -->
+<div class="info-card reveal-left">
+    <div class="info-text">
+        <h2>1. What is CRM?</h2>
+        <p>
+            CRM (Customer Relationship Management) is a system that helps businesses
+            manage customer data, interactions, and sales activities in one place.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 2 ================= -->
+<div class="info-card reveal-right">
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+    </div>
+    <div class="info-text">
+        <h2>2. Why CRM is Important</h2>
+        <p>
+            Without CRM, customer details can be forgotten.
+            CRM ensures no customer or follow-up is missed.
+        </p>
+    </div>
+</div>
+
+<!-- ================= SCROLL 3 ================= -->
+<div class="info-card reveal-up">
+    <div class="info-text">
+        <h2>3. CRM in Retail Stores</h2>
+        <p>
+            Retail stores handle many walk-in customers.
+            CRM helps store customer interests and purchase intent.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 4 ================= -->
+<div class="info-card reveal-left">
+    <div class="info-text">
+        <h2>4. Lead Management</h2>
+        <p>
+            Leads are customers interested in products.
+            CRM stores leads with contact details and requirements.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 5 ================= -->
+<div class="info-card reveal-right">
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+    </div>
+    <div class="info-text">
+        <h2>5. Product Tracking</h2>
+        <p>
+            Products are stored in CRM so leads are always linked
+            to available items.
+        </p>
+    </div>
+</div>
+
+<!-- ================= SCROLL 6 ================= -->
+<div class="info-card reveal-up">
+    <div class="info-text">
+        <h2>6. Reminder System</h2>
+        <p>
+            CRM reminders help employees follow up with customers
+            at the right time.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 7 ================= -->
+<div class="info-card reveal-left">
+    <div class="info-text">
+        <h2>7. Customer Response Tracking</h2>
+        <p>
+            CRM records whether a customer responded,
+            helping prioritize serious buyers.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/1260/1260830.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 8 ================= -->
+<div class="info-card reveal-right">
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+    </div>
+    <div class="info-text">
+        <h2>8. Lead Scoring & Priority</h2>
+        <p>
+            Leads gain points based on responses.
+            High-score leads get higher priority.
+        </p>
+    </div>
+</div>
+
+<!-- ================= SCROLL 9 ================= -->
+<div class="info-card reveal-up">
+    <div class="info-text">
+        <h2>9. Deal Conversion</h2>
+        <p>
+            When a customer confirms purchase,
+            the lead is closed and converted into a deal.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/1907/1907545.png">
+    </div>
+</div>
+
+<!-- ================= SCROLL 10 ================= -->
+<div class="info-card reveal-left">
+    <div class="info-text">
+        <h2>10. Why Our CRM is Simple</h2>
+        <p>
+            Our CRM is designed to be simple, fast, and user-friendly,
+            so employees can focus on customers, not software.
+        </p>
+    </div>
+    <div class="info-image">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png">
+    </div>
+</div>
+
+</div>
+
+<script src="/static/scroll.js"></script>
+</body>
+</html>

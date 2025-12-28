@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leads | Croma CRM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/products">Products</a>
+    <a href="/deals">Deals</a>
+    <a href="/reminders">Reminders</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+    <h2 style="margin-bottom:20px;">Lead Management</h2>
+
+    <!-- ================= ADD LEAD CARD ================= -->
+    <div class="lead-form-card">
+        <h3>Add New Lead</h3>
+
+        <form method="post" class="lead-form">
+            <input name="name" placeholder="Customer Name" required>
+            <input name="phone" placeholder="Phone Number" required>
+            <input name="email" placeholder="Email">
+
+            <select name="product" required>
+                <option value="">Select Product</option>
+                {% for p in products %}
+                    <option value="{{ p[0] }}">{{ p[0] }}</option>
+                {% endfor %}
+            </select>
+
+            <input name="budget" placeholder="Budget">
+
+            <button class="btn add">Create Lead</button>
+        </form>
+    </div>
+
+    <!-- ================= LEADS LIST ================= -->
+    <div class="lead-table-card">
+        <h3>Leads Overview</h3>
+
+        <table class="lead-table">
+            <tr>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Priority</th>
+                <th>Action</th>
+            </tr>
+
+            {% for l in leads %}
+            <tr>
+                <td>
+                    <strong>{{ l[1] }}</strong><br>
+                    <small>{{ l[2] }}</small>
+                </td>
+
+                <td>{{ l[4] }}</td>
+
+                <td>
+                    {% if l[6] == 'Closed' %}
+                        <span class="badge closed">Closed</span>
+                    {% else %}
+                        <span class="badge open">Open</span>
+                    {% endif %}
+                </td>
+
+                <td>
+                    <span class="score-circle">{{ l[7] }}</span>
+                </td>
+
+                <td>
+                    {% if l[8] == 'High' %}
+                        <span class="priority high">High</span>
+                    {% elif l[8] == 'Medium' %}
+                        <span class="priority medium">Medium</span>
+                    {% else %}
+                        <span class="priority low">Low</span>
+                    {% endif %}
+                </td>
+
+                <td>
+                    {% if l[6] != 'Closed' %}
+                        <a href="/close_lead/{{ l[0] }}" class="btn edit">Close</a>
+                    {% else %}
+                        ✔
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

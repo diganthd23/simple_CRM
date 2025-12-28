@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products | Croma CRM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/leads">Leads</a>
+    <a href="/deals">Deals</a>
+    <a href="/reminders">Reminders</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+    <h2 style="margin-bottom:20px;">Product Management</h2>
+
+    <!-- ================= ADD PRODUCT CARD ================= -->
+    <div class="product-form-card">
+        <h3>Add New Product</h3>
+
+        <form method="post" class="product-form">
+            <input name="name" placeholder="Product Name" required>
+            <input name="category" placeholder="Category (TV, Mobile, Laptop)">
+            <input name="price" placeholder="Price (₹)">
+            <button class="btn add">Add Product</button>
+        </form>
+    </div>
+
+    <!-- ================= PRODUCT LIST ================= -->
+    <div class="product-table-card">
+        <h3>Available Products</h3>
+
+        <table class="product-table">
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+
+            {% for p in products %}
+            <tr>
+                <td>{{ p[0] }}</td>
+
+                <td>
+                    <strong>{{ p[1] }}</strong>
+                </td>
+
+                <td>
+                    {% if p[2] %}
+                        <span class="category-chip">{{ p[2] }}</span>
+                    {% else %}
+                        -
+                    {% endif %}
+                </td>
+
+                <td>
+                    <span class="price-tag">₹ {{ p[3] }}</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

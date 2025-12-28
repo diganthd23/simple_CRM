@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a5af9, #b983ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN CONTAINER */
+.login-container {
+    width: 900px;
+    height: 480px;
+    background: #fff;
+    display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* LEFT SIDE */
+.left-panel {
+    width: 55%;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #6a5af9, #8f7cfb);
+    color: white;
+}
+
+.left-panel h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.left-panel p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* RIGHT SIDE */
+.right-panel {
+    width: 45%;
+    padding: 60px 40px;
+}
+
+.right-panel h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6a5af9;
+}
+
+/* INPUTS */
+.input-box {
+    margin-bottom: 18px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.input-box input:focus {
+    border-color: #6a5af9;
+}
+
+/* OPTIONS */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.options a {
+    text-decoration: none;
+    color: #6a5af9;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6a5af9, #8f7cfb);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deals | Croma CRM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/leads">Leads</a>
+    <a href="/products">Products</a>
+    <a href="/reminders">Reminders</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+    <h2 style="margin-bottom:20px;">Deals Management</h2>
+
+    <!-- ================= DEALS LIST ================= -->
+    <div class="deal-table-card">
+        <h3>Closed Deals</h3>
+
+        <table class="deal-table">
+            <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+
+            {% for d in deals %}
+            <tr>
+                <td>{{ d[0] }}</td>
+
+                <td>
+                    <strong>{{ d[1] }}</strong>
+                </td>
+
+                <td>{{ d[2] }}</td>
+
+                <td>
+                    <span class="deal-amount">₹ {{ d[3] }}</span>
+                </td>
+
+                <td>
+                    <span class="deal-status">
+                        {{ d[4] }}
+                    </span>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

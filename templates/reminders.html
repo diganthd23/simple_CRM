@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reminders | Croma CRM</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/leads">Leads</a>
+    <a href="/products">Products</a>
+    <a href="/deals">Deals</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+
+    <h2 style="margin-bottom:20px;">Reminder Management</h2>
+
+    <!-- ================= ADD REMINDER ================= -->
+    <div class="reminder-form-card">
+        <h3>Schedule Reminder</h3>
+
+        <form method="post" class="reminder-form">
+            <select name="lead_id" required>
+                <option value="">Select Lead</option>
+                {% for l in leads %}
+                    <option value="{{ l[0] }}">{{ l[1] }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="datetime-local" name="date" required>
+
+            <button class="btn add">Schedule</button>
+        </form>
+    </div>
+
+    <!-- ================= REMINDER LIST ================= -->
+    <div class="reminder-table-card">
+        <h3>Scheduled Reminders</h3>
+
+        <table class="reminder-table">
+            <tr>
+                <th>Lead</th>
+                <th>Schedule</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+
+            {% for r in reminders %}
+            <tr>
+                <td><strong>{{ r[1] }}</strong></td>
+                <td>{{ r[2] }}</td>
+                <td>
+                    {% if r[3] == 'Responded' %}
+                        <span class="reminder-status responded">Responded</span>
+                    {% elif r[3] == 'Not Responded' %}
+                        <span class="reminder-status not-responded">Not Responded</span>
+                    {% else %}
+                        <span class="reminder-status pending">Pending</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if r[3] == 'Pending' %}
+                        <a href="/update_response/{{ r[0] }}/Responded" class="btn edit">Responded</a>
+                        <a href="/update_response/{{ r[0] }}/Not Responded" class="btn delete">No</a>
+                    {% else %}
+                        ✔
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
